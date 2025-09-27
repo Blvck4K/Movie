@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jiggy-Z - All Games</title>
+    <title>Jiggy-Z - Search Results</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -25,16 +25,15 @@
                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
-            <a href="create.html" class="create-post-button">Create Post</a>
         </header>
 
         <button class="back-button" onclick="window.history.back()">Go Back</button>
 
         <main>
-            <section id="all-games">
-                <h2>All Games</h2>
-                <div class="item-container" id="all-games-container">
-                    <!-- Game items will be dynamically inserted here -->
+            <section id="search-results">
+                <h2>Search Results for "<span id="search-query"></span>"</h2>
+                <div id="search-results-container">
+                    <!-- Search results will be dynamically inserted here -->
                 </div>
             </section>
         </main>

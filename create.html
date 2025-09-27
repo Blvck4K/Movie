@@ -19,6 +19,12 @@
     <div class="main-content">
         <header>
             <h1><a href="index.html">Jiggy-Z</a></h1>
+            <div class="search-container">
+                <form id="search-form">
+                    <input type="text" id="search-input" placeholder="Search for movies or games...">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
         </header>
 
         <button class="back-button" onclick="window.history.back()">Go Back</button>
@@ -44,6 +50,9 @@
 
                     <label for="imageUrl">Image URL:</label>
                     <input type="url" id="imageUrl" name="imageUrl" required>
+
+                    <label for="cardImageUrl">Cover Image URL:</label>
+                    <input type="url" id="cardImageUrl" name="cardImageUrl" required>
 
                     <label for="review-author">Review Author:</label>
                     <input type="text" id="review-author" name="review-author" required>

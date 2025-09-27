@@ -1,20 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     const sampleData = {
         movies: [
-            { id: 1, title: 'Movie 1', description: 'Description for Movie 1', rating: '8.5/10', reviews: [{ author: 'User1', text: 'Great movie!' }], comments: [], downloadLinks: [{ source: 'Source 1', url: '#' }], imageUrl: 'https://via.placeholder.com/200x300', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }, { type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
-            { id: 2, title: 'Movie 2', description: 'Description for Movie 2', rating: '8.2/10', reviews: [{ author: 'User2', text: 'Very good.' }], comments: [], downloadLinks: [{ source: 'Source 1', url: '#' }], imageUrl: 'https://via.placeholder.com/200x300', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
-            { id: 3, title: 'Movie 3', description: 'Description for Movie 3', rating: '7.9/10', reviews: [{ author: 'User3', text: 'Not bad.' }], comments: [], downloadLinks: [{ source: 'Source 1', url: '#' }], imageUrl: 'https://via.placeholder.com/200x300', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
-            { id: 4, title: 'Movie 4', description: 'Description for Movie 4', rating: '8.8/10', reviews: [{ author: 'User4', text: 'Excellent!' }], comments: [], downloadLinks: [{ source: 'Source 1', url: '#' }], imageUrl: 'https://via.placeholder.com/200x300', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date() },
-            { id: 5, title: 'Movie 5', description: 'Description for Movie 5', rating: '8.1/10', reviews: [{ author: 'User5', text: 'I liked it.' }], comments: [], downloadLinks: [{ source: 'Source 1', url: '#' }], imageUrl: 'https://via.placeholder.com/200x300', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
-            { id: 6, title: 'Movie 6', description: 'Description for Movie 6', rating: '7.5/10', reviews: [{ author: 'User6', text: 'Decent.' }], comments: [], downloadLinks: [{ source: 'Source 1', url: '#' }], imageUrl: 'https://via.placeholder.com/200x300', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
+            { id: 1, title: 'Movie 1', description: 'Description for Movie 1', rating: '8.5/10', reviews: [{ author: 'User1', text: 'Great movie!' }], comments: [], downloadLinks: [{ source: 'Source 1', url: '#' }], imageUrl: 'https://via.placeholder.com/200x300', cardImageUrl: 'https://via.placeholder.com/200x300', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }, { type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01'), popular: true },
+            { id: 2, title: 'Movie 2', description: 'Description for Movie 2', rating: '8.2/10', reviews: [{ author: 'User2', text: 'Very good.' }], comments: [], downloadLinks: [{ source: 'Source 1', url: '#' }], imageUrl: 'https://via.placeholder.com/200x300', cardImageUrl: 'https://via.placeholder.com/200x300', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
+            { id: 3, title: 'Movie 3', description: 'Description for Movie 3', rating: '7.9/10', reviews: [{ author: 'User3', text: 'Not bad.' }], comments: [], downloadLinks: [{ source: 'Source 1', url: '#' }], imageUrl: 'https://via.placeholder.com/200x300', cardImageUrl: 'https://via.placeholder.com/200x300', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
+            { id: 4, title: 'Movie 4', description: 'Description for Movie 4', rating: '8.8/10', reviews: [{ author: 'User4', text: 'Excellent!' }], comments: [], downloadLinks: [{ source: 'Source 1', url: '#' }], imageUrl: 'https://via.placeholder.com/200x300', cardImageUrl: 'https://via.placeholder.com/200x300', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date() },
+            { id: 5, title: 'Movie 5', description: 'Description for Movie 5', rating: '8.1/10', reviews: [{ author: 'User5', text: 'I liked it.' }], comments: [], downloadLinks: [{ source: 'Source 1', url: '#' }], imageUrl: 'https://via.placeholder.com/200x300', cardImageUrl: 'https://via.placeholder.com/200x300', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
+            { id: 6, title: 'Movie 6', description: 'Description for Movie 6', rating: '7.5/10', reviews: [{ author: 'User6', text: 'Decent.' }], comments: [], downloadLinks: [{ source: 'Source 1', url: '#' }], imageUrl: 'https://via.placeholder.com/200x300', cardImageUrl: 'https://via.placeholder.com/200x300', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
         ],
         games: [
-            { id: 1, title: 'Game 1', description: 'Description for Game 1', rating: '9/10', reviews: [{ author: 'Gamer1', text: 'Amazing gameplay!' }], comments: [], downloadLinks: [{ source: 'Steam', url: '#' }], imageUrl: 'https://via.placeholder.com/300x200', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }, { type: 'video', url: 'https://www.w3schools.com/html/mov_bbb.mp4' }], createdAt: new Date('2023-01-01') },
-            { id: 2, title: 'Game 2', description: 'Description for Game 2', rating: '8.5/10', reviews: [{ author: 'Gamer2', text: 'Hours of fun.' }], comments: [], downloadLinks: [{ source: 'Epic Games', url: '#' }], imageUrl: 'https://via.placeholder.com/300x200', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
-            { id: 3, title: 'Game 3', description: 'Description for Game 3', rating: '8/10', reviews: [{ author: 'Gamer3', text: 'Good story.' }], comments: [], downloadLinks: [{ source: 'Steam', url: '#' }], imageUrl: 'https://via.placeholder.com/300x200', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
-            { id: 4, title: 'Game 4', description: 'Description for Game 4', rating: '9.2/10', reviews: [{ author: 'Gamer4', text: 'A masterpiece.' }], comments: [], downloadLinks: [{ source: 'Epic Games', url: '#' }], imageUrl: 'https://via.placeholder.com/300x200', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date() },
-            { id: 5, title: 'Game 5', description: 'Description for Game 5', rating: '8.8/10', reviews: [{ author: 'Gamer5', text: 'Highly recommended.' }], comments: [], downloadLinks: [{ source: 'Steam', url: '#' }], imageUrl: 'https://via.placeholder.com/300x200', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
-            { id: 6, title: 'Game 6', description: 'Description for Game 6', rating: '7.8/10', reviews: [{ author: 'Gamer6', text: 'Solid game.' }], comments: [], downloadLinks: [{ source: 'Epic Games', url: '#' }], imageUrl: 'https://via.placeholder.com/300x200', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
+            { id: 1, title: 'Game 1', description: 'Description for Game 1', rating: '9/10', reviews: [{ author: 'Gamer1', text: 'Amazing gameplay!' }], comments: [], downloadLinks: [{ source: 'Steam', url: '#' }], imageUrl: 'https://via.placeholder.com/300x200', cardImageUrl: 'https://via.placeholder.com/300x200', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }, { type: 'video', url: 'https://www.w3schools.com/html/mov_bbb.mp4' }], createdAt: new Date('2023-01-01') },
+            { id: 2, title: 'Game 2', description: 'Description for Game 2', rating: '8.5/10', reviews: [{ author: 'Gamer2', text: 'Hours of fun.' }], comments: [], downloadLinks: [{ source: 'Epic Games', url: '#' }], imageUrl: 'https://via.placeholder.com/300x200', cardImageUrl: 'https://via.placeholder.com/300x200', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
+            { id: 3, title: 'Game 3', description: 'Description for Game 3', rating: '8/10', reviews: [{ author: 'Gamer3', text: 'Good story.' }], comments: [], downloadLinks: [{ source: 'Steam', url: '#' }], imageUrl: 'https://via.placeholder.com/300x200', cardImageUrl: 'https://via.placeholder.com/300x200', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
+            { id: 4, title: 'Game 4', description: 'Description for Game 4', rating: '9.2/10', reviews: [{ author: 'Gamer4', text: 'A masterpiece.' }], comments: [], downloadLinks: [{ source: 'Epic Games', url: '#' }], imageUrl: 'https://via.placeholder.com/300x200', cardImageUrl: 'https://via.placeholder.com/300x200', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date() },
+            { id: 5, title: 'Game 5', description: 'Description for Game 5', rating: '8.8/10', reviews: [{ author: 'Gamer5', text: 'Highly recommended.' }], comments: [], downloadLinks: [{ source: 'Steam', url: '#' }], imageUrl: 'https://via.placeholder.com/300x200', cardImageUrl: 'https://via.placeholder.com/300x200', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
+            { id: 6, title: 'Game 6', description: 'Description for Game 6', rating: '7.8/10', reviews: [{ author: 'Gamer6', text: 'Solid game.' }], comments: [], downloadLinks: [{ source: 'Epic Games', url: '#' }], imageUrl: 'https://via.placeholder.com/300x200', cardImageUrl: 'https://via.placeholder.com/300x200', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
         ]
     };
 
@@ -52,13 +52,32 @@ document.addEventListener('DOMContentLoaded', () => {
         return [popularMovie, popularGame].filter(Boolean);
     }
 
+    // Function to format the year from the createdAt Date object
+    function getYear(date) {
+        return date ? date.getFullYear() : 'N/A';
+    }
+
     function createItemCard(item, type) {
+        // Extract the year and rating from the item object
+        const year = getYear(item.createdAt);
+        const rating = item.rating || 'N/A';
+
         const card = document.createElement('div');
         card.classList.add('item-card');
+
+        // Updated innerHTML to include the new .item-overlay structure
         card.innerHTML = `
-            <img src="${item.imageUrl}" alt="${item.title}">
-            <h3>${item.title}</h3>
+            <img src="${item.cardImageUrl}" alt="${item.title}">
+
+            <div class="item-overlay">
+                <h3 class="item-title-overlay">${item.title}</h3>
+                <p class="item-meta">${year} | Rating: ${rating}</p>
+            </div>
+
+            <div class="item-info">
+                </div>
         `;
+
         card.addEventListener('click', () => {
             window.location.href = `details.html?type=${type}&id=${item.id}`;
         });
@@ -88,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('edit-post-button').href = `edit.html?type=${type}&id=${id}`;
                 document.getElementById('item-description').textContent = item.description;
                 document.getElementById('item-rating').textContent = item.rating;
+                document.getElementById('item-year').textContent = getYear(item.createdAt);
 
                 const reviewsContainer = document.getElementById('item-reviews');
                 reviewsContainer.innerHTML = '';
@@ -216,6 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 description: formData.get('description'),
                 rating: formData.get('rating'),
                 imageUrl: formData.get('imageUrl'),
+                cardImageUrl: formData.get('cardImageUrl'),
                 reviews: [{ author: formData.get('review-author'), text: formData.get('review-text') }],
                 downloadLinks: [{ source: formData.get('download-source'), url: formData.get('download-url') }],
                 createdAt: new Date(),
@@ -236,6 +257,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const editPostForm = document.getElementById('edit-post-form');
     if (editPostForm) {
+
+        // NEW HELPER FUNCTION to format date for the HTML input field
+        const formatDate = (date) => {
+            let d = new Date(date),
+                month = '' + (d.getMonth() + 1),
+                day = '' + d.getDate(),
+                year = d.getFullYear();
+
+            if (month.length < 2)
+                month = '0' + month;
+            if (day.length < 2)
+                day = '0' + day;
+
+            return [year, month, day].join('-');
+        }
+
         const params = new URLSearchParams(window.location.search);
         const type = params.get('type');
         const id = parseInt(params.get('id'));
@@ -249,7 +286,12 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('title').value = item.title;
             document.getElementById('description').value = item.description;
             document.getElementById('rating').value = item.rating;
+
+            // --> UPDATED: Set the value of the date input field
+            document.getElementById('createdDate').value = formatDate(item.createdAt);
+
             document.getElementById('imageUrl').value = item.imageUrl;
+            document.getElementById('cardImageUrl').value = item.cardImageUrl;
             if (item.reviews && item.reviews.length > 0) {
                 document.getElementById('review-author').value = item.reviews[0].author;
                 document.getElementById('review-text').value = item.reviews[0].text;
@@ -269,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const formData = new FormData(editPostForm);
             const updatedId = parseInt(formData.get('edit-id'));
             const updatedType = formData.get('edit-type');
-            
+
             const items = updatedType === 'movie' ? siteData.movies : siteData.games;
             const itemIndex = items.findIndex(i => i.id === updatedId);
 
@@ -282,7 +324,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     title: formData.get('title'),
                     description: formData.get('description'),
                     rating: formData.get('rating'),
+
+                    // --> UPDATED: Convert the date string back into a Date object
+                    createdAt: new Date(formData.get('createdDate')),
+
                     imageUrl: formData.get('imageUrl'),
+                    cardImageUrl: formData.get('cardImageUrl'),
                     reviews: [{ author: formData.get('review-author'), text: formData.get('review-text') }],
                     downloadLinks: [{ source: formData.get('download-source'), url: formData.get('download-url') }],
                     media: media,
@@ -292,6 +339,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.location.href = updatedType === 'movie' ? 'movies.html' : 'games.html';
             }
         });
+
+        const deleteButton = document.getElementById('delete-post-button');
+        if (deleteButton) {
+            deleteButton.addEventListener('click', () => {
+                const confirmed = confirm('Are you sure you want to delete this post? This action cannot be undone.');
+                if (confirmed) {
+                    const deleteId = parseInt(document.getElementById('edit-id').value);
+                    const deleteType = document.getElementById('edit-type').value;
+
+                    if (deleteType === 'movie') {
+                        siteData.movies = siteData.movies.filter(m => m.id !== deleteId);
+                    } else {
+                        siteData.games = siteData.games.filter(g => g.id !== deleteId);
+                    }
+
+                    saveData(siteData);
+                    window.location.href = deleteType === 'movie' ? 'movies.html' : 'games.html';
+                }
+            });
+        }
     }
 
     const homePageSlider = document.querySelector('.hero-section .hero-slider');
@@ -302,17 +369,90 @@ document.addEventListener('DOMContentLoaded', () => {
         popularItems.forEach(item => {
             const slide = document.createElement('div');
             slide.classList.add('slide');
+
+            // Truncate description to 20 words
+            const description = item.description.split(' ').slice(0, 20).join(' ') + '...';
+            const type = siteData.movies.some(m => m.id === item.id) ? 'movie' : 'game';
+
+            slide.style.backgroundImage = `url('${item.imageUrl}')`;
             slide.innerHTML = `
-                <img src="${item.imageUrl}" alt="${item.title}">
-                <h3>${item.title}</h3>
+                <div class="hero-content">
+                    <h3>${item.title}</h3>
+                    <p class="rating">${item.rating}</p>
+                    <p class="description">${description}</p>
+                    <a href="details.html?type=${type}&id=${item.id}" class="details-button">View Details</a>
+                </div>
             `;
-            slide.addEventListener('click', () => {
-                const type = siteData.movies.some(m => m.id === item.id) ? 'movie' : 'game';
-                window.location.href = `details.html?type=${type}&id=${item.id}`;
-            });
             slidesContainer.appendChild(slide);
         });
 
         initializeSlider(homePageSlider);
+    }
+
+    const searchForm = document.getElementById('search-form');
+    if (searchForm) {
+        searchForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const query = document.getElementById('search-input').value.toLowerCase();
+            if (query) {
+                const filteredMovies = siteData.movies.filter(movie => movie.title.toLowerCase().includes(query));
+                const filteredGames = siteData.games.filter(game => game.title.toLowerCase().includes(query));
+
+                const searchResults = {
+                    movies: filteredMovies,
+                    games: filteredGames,
+                    query: query
+                };
+
+                localStorage.setItem('jiggyz-search-results', JSON.stringify(searchResults));
+                window.location.href = 'search.html';
+            }
+        });
+    }
+
+    function displaySearchResults() {
+        const resultsContainer = document.getElementById('search-results-container');
+        const querySpan = document.getElementById('search-query');
+        const searchResults = JSON.parse(localStorage.getItem('jiggyz-search-results'));
+
+        if (resultsContainer && searchResults) {
+            querySpan.textContent = searchResults.query;
+            resultsContainer.innerHTML = '';
+
+            if (searchResults.movies.length === 0 && searchResults.games.length === 0) {
+                resultsContainer.innerHTML = '<p>No results found.</p>';
+                return;
+            }
+
+            if (searchResults.movies.length > 0) {
+                const moviesHeader = document.createElement('h3');
+                moviesHeader.textContent = 'Movies';
+                resultsContainer.appendChild(moviesHeader);
+                const moviesContainer = document.createElement('div');
+                moviesContainer.classList.add('item-container');
+                searchResults.movies.forEach(movie => {
+                    const movieCard = createItemCard(movie, 'movie');
+                    moviesContainer.appendChild(movieCard);
+                });
+                resultsContainer.appendChild(moviesContainer);
+            }
+
+            if (searchResults.games.length > 0) {
+                const gamesHeader = document.createElement('h3');
+                gamesHeader.textContent = 'Games';
+                resultsContainer.appendChild(gamesHeader);
+                const gamesContainer = document.createElement('div');
+                gamesContainer.classList.add('item-container');
+                searchResults.games.forEach(game => {
+                    const gameCard = createItemCard(game, 'game');
+                    gamesContainer.appendChild(gameCard);
+                });
+                resultsContainer.appendChild(gamesContainer);
+            }
+        }
+    }
+
+    if (document.getElementById('search-results-container')) {
+        displaySearchResults();
     }
 });
