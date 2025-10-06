@@ -1,71 +1,48 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const sampleData = {
-        movies: [
-            { id: 1, title: 'Movie 1', description: 'Description for Movie 1', rating: '8.5/10', reviews: [{ author: 'User1', text: 'Great movie!' }], comments: [], downloadLinks: [{ source: 'Source 1', url: '#' }], imageUrl: 'https://via.placeholder.com/200x300', cardImageUrl: 'https://via.placeholder.com/200x300', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }, { type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01'), popular: true },
-            { id: 2, title: 'Movie 2', description: 'Description for Movie 2', rating: '8.2/10', reviews: [{ author: 'User2', text: 'Very good.' }], comments: [], downloadLinks: [{ source: 'Source 1', url: '#' }], imageUrl: 'https://via.placeholder.com/200x300', cardImageUrl: 'https://via.placeholder.com/200x300', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
-            { id: 3, title: 'Movie 3', description: 'Description for Movie 3', rating: '7.9/10', reviews: [{ author: 'User3', text: 'Not bad.' }], comments: [], downloadLinks: [{ source: 'Source 1', url: '#' }], imageUrl: 'https://via.placeholder.com/200x300', cardImageUrl: 'https://via.placeholder.com/200x300', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
-            { id: 4, title: 'Movie 4', description: 'Description for Movie 4', rating: '8.8/10', reviews: [{ author: 'User4', text: 'Excellent!' }], comments: [], downloadLinks: [{ source: 'Source 1', url: '#' }], imageUrl: 'https://via.placeholder.com/200x300', cardImageUrl: 'https://via.placeholder.com/200x300', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date() },
-            { id: 5, title: 'Movie 5', description: 'Description for Movie 5', rating: '8.1/10', reviews: [{ author: 'User5', text: 'I liked it.' }], comments: [], downloadLinks: [{ source: 'Source 1', url: '#' }], imageUrl: 'https://via.placeholder.com/200x300', cardImageUrl: 'https://via.placeholder.com/200x300', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
-            { id: 6, title: 'Movie 6', description: 'Description for Movie 6', rating: '7.5/10', reviews: [{ author: 'User6', text: 'Decent.' }], comments: [], downloadLinks: [{ source: 'Source 1', url: '#' }], imageUrl: 'https://via.placeholder.com/200x300', cardImageUrl: 'https://via.placeholder.com/200x300', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
-        ],
-        games: [
-            { id: 1, title: 'Game 1', description: 'Description for Game 1', rating: '9/10', reviews: [{ author: 'Gamer1', text: 'Amazing gameplay!' }], comments: [], downloadLinks: [{ source: 'Steam', url: '#' }], imageUrl: 'https://via.placeholder.com/300x200', cardImageUrl: 'https://via.placeholder.com/300x200', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }, { type: 'video', url: 'https://www.w3schools.com/html/mov_bbb.mp4' }], createdAt: new Date('2023-01-01') },
-            { id: 2, title: 'Game 2', description: 'Description for Game 2', rating: '8.5/10', reviews: [{ author: 'Gamer2', text: 'Hours of fun.' }], comments: [], downloadLinks: [{ source: 'Epic Games', url: '#' }], imageUrl: 'https://via.placeholder.com/300x200', cardImageUrl: 'https://via.placeholder.com/300x200', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
-            { id: 3, title: 'Game 3', description: 'Description for Game 3', rating: '8/10', reviews: [{ author: 'Gamer3', text: 'Good story.' }], comments: [], downloadLinks: [{ source: 'Steam', url: '#' }], imageUrl: 'https://via.placeholder.com/300x200', cardImageUrl: 'https://via.placeholder.com/300x200', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
-            { id: 4, title: 'Game 4', description: 'Description for Game 4', rating: '9.2/10', reviews: [{ author: 'Gamer4', text: 'A masterpiece.' }], comments: [], downloadLinks: [{ source: 'Epic Games', url: '#' }], imageUrl: 'https://via.placeholder.com/300x200', cardImageUrl: 'https://via.placeholder.com/300x200', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date() },
-            { id: 5, title: 'Game 5', description: 'Description for Game 5', rating: '8.8/10', reviews: [{ author: 'Gamer5', text: 'Highly recommended.' }], comments: [], downloadLinks: [{ source: 'Steam', url: '#' }], imageUrl: 'https://via.placeholder.com/300x200', cardImageUrl: 'https://via.placeholder.com/300x200', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
-            { id: 6, title: 'Game 6', description: 'Description for Game 6', rating: '7.8/10', reviews: [{ author: 'Gamer6', text: 'Solid game.' }], comments: [], downloadLinks: [{ source: 'Epic Games', url: '#' }], imageUrl: 'https://via.placeholder.com/300x200', cardImageUrl: 'https://via.placeholder.com/300x200', media: [{ type: 'image', url: 'https://via.placeholder.com/600x400' }], createdAt: new Date('2023-01-01') },
-        ]
+import {
+    getAllMovies,
+    getAllGames,
+    getMovieById,
+    getGameById,
+    createMovie,
+    createGame,
+    updateMovie,
+    updateGame,
+    deleteMovie,
+    deleteGame,
+    addComment,
+    searchMoviesAndGames
+} from './database.js';
+
+document.addEventListener('DOMContentLoaded', async () => {
+    let siteData = {
+        movies: [],
+        games: []
     };
 
-    function getData() {
-        let data = JSON.parse(localStorage.getItem('jiggyz-data'));
-        if (!data) {
-            data = sampleData;
-            localStorage.setItem('jiggyz-data', JSON.stringify(data));
-        } else {
-            // Dates are not preserved when stringifying, so we need to convert them back
-            data.movies.forEach(m => {
-                m.createdAt = new Date(m.createdAt);
-                if (!m.comments) m.comments = [];
-            });
-            data.games.forEach(g => {
-                g.createdAt = new Date(g.createdAt);
-                if (!g.comments) g.comments = [];
-            });
-        }
-        return data;
+    async function loadData() {
+        siteData.movies = await getAllMovies();
+        siteData.games = await getAllGames();
     }
 
-    function saveData(data) {
-        localStorage.setItem('jiggyz-data', JSON.stringify(data));
-    }
-
-    const siteData = getData();
+    await loadData();
 
     function getPopularItems() {
-        // Find the single movie and game marked as popular
         const popularMovie = siteData.movies.find(m => m.popular);
         const popularGame = siteData.games.find(g => g.popular);
-
-        // Return them in an array, filtering out any that are undefined
         return [popularMovie, popularGame].filter(Boolean);
     }
 
-    // Function to format the year from the createdAt Date object
     function getYear(date) {
         return date ? date.getFullYear() : 'N/A';
     }
 
     function createItemCard(item, type) {
-        // Extract the year and rating from the item object
         const year = getYear(item.createdAt);
         const rating = item.rating || 'N/A';
 
         const card = document.createElement('div');
         card.classList.add('item-card');
 
-        // Updated innerHTML to include the new .item-overlay structure
         card.innerHTML = `
             <img src="${item.cardImageUrl}" alt="${item.title}">
 
@@ -93,14 +70,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function loadDetails() {
+    async function loadDetails() {
         const params = new URLSearchParams(window.location.search);
         const type = params.get('type');
         const id = parseInt(params.get('id'));
 
         if (type && id) {
-            const items = type === 'movie' ? siteData.movies : siteData.games;
-            const item = items.find(i => i.id === id);
+            const item = type === 'movie' ? await getMovieById(id) : await getGameById(id);
 
             if (item) {
                 document.getElementById('item-title').textContent = item.title;
@@ -161,17 +137,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const commentForm = document.getElementById('comment-form');
                 if (commentForm) {
-                    commentForm.addEventListener('submit', (e) => {
+                    commentForm.addEventListener('submit', async (e) => {
                         e.preventDefault();
                         const author = document.getElementById('comment-author').value;
                         const text = document.getElementById('comment-text').value;
                         if (author && text) {
-                            if (!item.comments) {
-                                item.comments = [];
-                            }
-                            item.comments.push({ author, text });
-                            saveData(siteData);
-                            loadDetails(); // Reload details to show new comment
+                            await addComment(type, id, { author, text });
+                            loadDetails();
                             commentForm.reset();
                         }
                     });
@@ -223,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const createPostForm = document.getElementById('create-post-form');
     if (createPostForm) {
-        createPostForm.addEventListener('submit', (e) => {
+        createPostForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const formData = new FormData(createPostForm);
             const type = formData.get('type');
@@ -231,7 +203,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const media = mediaUrls.map(url => ({ type: 'image', url }));
 
             const newPost = {
-                id: Date.now(),
                 title: formData.get('title'),
                 description: formData.get('description'),
                 rating: formData.get('rating'),
@@ -245,20 +216,17 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             if (type === 'movie') {
-                siteData.movies.push(newPost);
+                await createMovie(newPost);
             } else {
-                siteData.games.push(newPost);
+                await createGame(newPost);
             }
 
-            saveData(siteData);
             window.location.href = type === 'movie' ? 'movies.html' : 'games.html';
         });
     }
 
     const editPostForm = document.getElementById('edit-post-form');
     if (editPostForm) {
-
-        // NEW HELPER FUNCTION to format date for the HTML input field
         const formatDate = (date) => {
             let d = new Date(date),
                 month = '' + (d.getMonth() + 1),
@@ -277,8 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const type = params.get('type');
         const id = parseInt(params.get('id'));
 
-        const items = type === 'movie' ? siteData.movies : siteData.games;
-        const item = items.find(i => i.id === id);
+        const item = type === 'movie' ? await getMovieById(id) : await getGameById(id);
 
         if (item) {
             document.getElementById('edit-id').value = item.id;
@@ -286,10 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('title').value = item.title;
             document.getElementById('description').value = item.description;
             document.getElementById('rating').value = item.rating;
-
-            // --> UPDATED: Set the value of the date input field
             document.getElementById('createdDate').value = formatDate(item.createdAt);
-
             document.getElementById('imageUrl').value = item.imageUrl;
             document.getElementById('cardImageUrl').value = item.cardImageUrl;
             if (item.reviews && item.reviews.length > 0) {
@@ -306,55 +270,52 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('popular').checked = item.popular || false;
         }
 
-        editPostForm.addEventListener('submit', (e) => {
+        editPostForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const formData = new FormData(editPostForm);
             const updatedId = parseInt(formData.get('edit-id'));
             const updatedType = formData.get('edit-type');
 
-            const items = updatedType === 'movie' ? siteData.movies : siteData.games;
-            const itemIndex = items.findIndex(i => i.id === updatedId);
+            const mediaUrls = formData.get('media-urls').split('\n').filter(url => url.trim() !== '');
+            const media = mediaUrls.map(url => ({ type: 'image', url }));
 
-            if (itemIndex > -1) {
-                const mediaUrls = formData.get('media-urls').split('\n').filter(url => url.trim() !== '');
-                const media = mediaUrls.map(url => ({ type: 'image', url }));
+            const updatedItem = {
+                title: formData.get('title'),
+                description: formData.get('description'),
+                rating: formData.get('rating'),
+                createdAt: new Date(formData.get('createdDate')),
+                imageUrl: formData.get('imageUrl'),
+                cardImageUrl: formData.get('cardImageUrl'),
+                reviews: [{ author: formData.get('review-author'), text: formData.get('review-text') }],
+                downloadLinks: [{ source: formData.get('download-source'), url: formData.get('download-url') }],
+                media: media,
+                popular: formData.get('popular') === 'on',
+                comments: item.comments || []
+            };
 
-                items[itemIndex] = {
-                    ...items[itemIndex],
-                    title: formData.get('title'),
-                    description: formData.get('description'),
-                    rating: formData.get('rating'),
-
-                    // --> UPDATED: Convert the date string back into a Date object
-                    createdAt: new Date(formData.get('createdDate')),
-
-                    imageUrl: formData.get('imageUrl'),
-                    cardImageUrl: formData.get('cardImageUrl'),
-                    reviews: [{ author: formData.get('review-author'), text: formData.get('review-text') }],
-                    downloadLinks: [{ source: formData.get('download-source'), url: formData.get('download-url') }],
-                    media: media,
-                    popular: formData.get('popular') === 'on'
-                };
-                saveData(siteData);
-                window.location.href = updatedType === 'movie' ? 'movies.html' : 'games.html';
+            if (updatedType === 'movie') {
+                await updateMovie(updatedId, updatedItem);
+            } else {
+                await updateGame(updatedId, updatedItem);
             }
+
+            window.location.href = updatedType === 'movie' ? 'movies.html' : 'games.html';
         });
 
         const deleteButton = document.getElementById('delete-post-button');
         if (deleteButton) {
-            deleteButton.addEventListener('click', () => {
+            deleteButton.addEventListener('click', async () => {
                 const confirmed = confirm('Are you sure you want to delete this post? This action cannot be undone.');
                 if (confirmed) {
                     const deleteId = parseInt(document.getElementById('edit-id').value);
                     const deleteType = document.getElementById('edit-type').value;
 
                     if (deleteType === 'movie') {
-                        siteData.movies = siteData.movies.filter(m => m.id !== deleteId);
+                        await deleteMovie(deleteId);
                     } else {
-                        siteData.games = siteData.games.filter(g => g.id !== deleteId);
+                        await deleteGame(deleteId);
                     }
 
-                    saveData(siteData);
                     window.location.href = deleteType === 'movie' ? 'movies.html' : 'games.html';
                 }
             });
@@ -370,7 +331,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const slide = document.createElement('div');
             slide.classList.add('slide');
 
-            // Truncate description to 20 words
             const description = item.description.split(' ').slice(0, 20).join(' ') + '...';
             const type = siteData.movies.some(m => m.id === item.id) ? 'movie' : 'game';
 
@@ -391,16 +351,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const searchForm = document.getElementById('search-form');
     if (searchForm) {
-        searchForm.addEventListener('submit', (e) => {
+        searchForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const query = document.getElementById('search-input').value.toLowerCase();
+            const query = document.getElementById('search-input').value;
             if (query) {
-                const filteredMovies = siteData.movies.filter(movie => movie.title.toLowerCase().includes(query));
-                const filteredGames = siteData.games.filter(game => game.title.toLowerCase().includes(query));
-
+                const results = await searchMoviesAndGames(query);
                 const searchResults = {
-                    movies: filteredMovies,
-                    games: filteredGames,
+                    movies: results.movies,
+                    games: results.games,
                     query: query
                 };
 
